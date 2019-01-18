@@ -11,6 +11,7 @@ test('nx.invoke', function() {
   };
 
   var rs = nx.invoke(obj1, 'fn1', ['arg1', 'arg2']);
-
+  var udf = nx.invoke(nx.GLOBAL, 'fnx', [1, 2, 3]);
   expect(rs).toBe('obj1_FEI');
+  expect(udf).toBe(undefined);
 });
