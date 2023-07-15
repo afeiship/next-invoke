@@ -29,4 +29,13 @@ describe('api.basic test', () => {
     const res = nx.invoke(obj, 'info.fn1', ['arg1', 'arg2']);
     expect(res).toBe('obj_FEI');
   });
+
+  test('invoke a fn directly', function () {
+    const fn = function (arg1, arg2) {
+      return arg1 + arg2;
+    };
+
+    const res = nx.invoke(null, fn, [1, 2]);
+    expect(res).toBe(3);
+  })
 });
